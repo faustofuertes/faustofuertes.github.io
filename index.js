@@ -40,10 +40,11 @@ btnBuscar.addEventListener('click', () => {
     const alimento = input.value;
 
     const explorar = document.getElementsByClassName('explorar')[0];
-    explorar.remove();
+    if(explorar)
+        explorar.remove();
 
     const resultado = document.createElement('h2');
-    resultado.textContent = `Resultados para: "${alimento}"`;
+
 
     const containerComidas = document.getElementsByClassName('comidas')[0];
     containerComidas.insertAdjacentElement('beforebegin', resultado);
