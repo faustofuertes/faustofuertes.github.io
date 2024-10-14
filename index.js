@@ -1,17 +1,7 @@
-const apiKey = 'ppR4S3ZFqbyEWbPhM7PN3INVNBmby5v4LNyC8nt7';
+import { getComida } from "./request.js";
 
-async function getComida(alimento) {
-    try {
-        const res = await fetch(`https://api.nal.usda.gov/fdc/v1/foods/search?query=${alimento}&api_key=${apiKey}`);
-        const alimentos = await res.json();
-        return alimentos;
-    } catch (error) {
-        console.error(error);
-    }
-}
-
-async function mostrarComida(alimento) {
-    const gramos = 100;
+//INDEX
+async function mostrarComida(nombreAlimento) {
     const containerAlimentos = document.getElementsByClassName('comidas')[0];
 
     // Eliminar contenido existente
@@ -19,35 +9,41 @@ async function mostrarComida(alimento) {
         containerAlimentos.removeChild(containerAlimentos.firstChild);
     }
 
-    const alimentos = await getComida(alimento);
+    const alimentos = await getComida(nombreAlimento);
+    const listaAlimentos = alimentos.foods;
 
-    for (const primerAlimento of alimentos.foods) {
-        const nombre = primerAlimento.description;
-        const calorias = primerAlimento.foodNutrients.find(nutriente => nutriente.nutrientName === 'Energy'); // Buscar calorías
+    listaAlimentos.forEach(alimento => {
+        añadirComida(alimento);
+    });
+}
 
-        const comida = document.createElement('div');
-        comida.classList.add('div-comida');
-        comida.innerHTML = `<p>${nombre}</p> <p>${calorias ? calorias.value : 'No disponible'} kcal <br> ${gramos} g </p>`;
+function añadirComida(alimento){
 
-        containerAlimentos.appendChild(comida);
-    }
+    const containerAlimentos = document.getElementsByClassName('comidas')[0];
+    const gramos = 100;
+
+    const nombre = alimento.description;
+    const calorias = alimento.foodNutrients.find(nutriente => nutriente.nutrientName === 'Energy'); // Buscar calorías
+
+    const comida = document.createElement('div');
+    comida.classList.add('div-comida');
+    comida.innerHTML = `<p>${nombre}</p> <p>${calorias ? calorias.value : 'No disponible'} kcal <br> ${gramos} g </p>`;
+
+    containerAlimentos.appendChild(comida);
 }
 
 const btnBuscar = document.getElementsByClassName('btn-buscar')[0];
-
 btnBuscar.addEventListener('click', () => {
     const input = document.getElementsByClassName('buscador')[0];
-    const alimento = input.value;
+    const nombreAlimento = input.value;
 
-    const explorar = document.getElementsByClassName('explorar')[0];
-    if(explorar)
-        explorar.remove();
+    const explorarH2 = document.getElementsByClassName('explorar')[0];
+    if(explorarH2)
+        explorarH2.remove();
 
-    const resultado = document.createElement('h2');
-
-
-    const containerComidas = document.getElementsByClassName('comidas')[0];
-    containerComidas.insertAdjacentElement('beforebegin', resultado);
-
-    mostrarComida(alimento);
+    mostrarComida(nombreAlimento);
 });
+
+
+//RECETAS
+
