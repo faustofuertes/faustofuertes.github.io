@@ -4,70 +4,20 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 /* INDEX */
 .header{
     width: 100%;
-    height: 50px;
+    height: 80px;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1); /* sombra con difuminado */
 }
 
-.barra-buscador{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 60px;
-    width: 100%;
-    height: 50px;
-}
-
-.barra-buscador input{
-    width: 50%;
-    height: 35px;
-    border-radius: 30px 0px 0px 30px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-    padding-left: 15px;
-    outline: none;
-    border: none;
-}
-
-.barra-buscador input:focus{
-    transition: .5s;
-    border: 1px solid #66BB6A;
-    border-right: none;
-}
-
-.buscador::placeholder{
-    font-size: 12px;
-}
-
-.btn-buscar{
-    height: 35px;
-    width: 90px;
-    border: none;
-    border-radius: 0px 30px 30px 0px;
-    font-weight: 700;
-    font-size: 12px;
-    background-color: #66BB6A;
-    color: white;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-}
-
-.bi-search{
-    font-size: 12px;
-    color: white;
-    padding: 5px;
-}
-
-h2{
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
-    font-size: 30px;
-    font-weight: 500;
+.header img{
+    height: 90px;
+    position: absolute;
+    margin-left: 70px;
 }
 
 .header ul{
@@ -76,11 +26,12 @@ h2{
     list-style: none;
     justify-content: flex-end;
     align-items: center;
-    font-size: 11px;
+    font-size: 16px;
+    font-weight: 500;
 }
 
 .header li{
-    margin: 10px;
+    margin: 16px;
     cursor: pointer;
 }
 .header li a{
@@ -89,20 +40,14 @@ h2{
 }
 
 .header li:last-child{
-    margin-right: 15%;
+    margin-right: 5%;
 }
 
 .header li:hover{
     transition: 0.2s;
     color: #66BB6A;
-    border-bottom: .5px solid #66BB6A;
 }
 
-.header li:last-child:hover {
-    transition: none;
-    color: inherit; 
-    border-bottom: none; 
-}
 
 .btn-empezar{
     padding: 10px;
@@ -110,13 +55,73 @@ h2{
     background-color: #66BB6A;
     border: none;
     cursor: pointer;
+    font-weight: 600;
+    font-size: 18px;
+    border-radius: 8px;
+    height: 55px;
+    width: 165px;
+}
+
+.barra-buscador{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+    width: 100%;
+    height: 50px;
+}
+
+.barra-buscador input{
+    font-size: 18px;
     font-weight: 500;
-    font-size: 12px;
-    border-radius: 4px;
+    width: 65%;
+    height: 50px;
+    border-radius: 30px 0px 0px 30px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    padding-left: 30px;
+    outline: none;
+    border: 1px solid transparent; /* Establece un borde transparente por defecto */
+}
+
+.barra-buscador input:focus{
+    transition: .4s;
+    border: 1px solid #66BB6A;
+    border-right: none;
+}
+
+.buscador::placeholder{
+    font-size: 18px;
+}
+
+.btn-buscar{
+    height: 52px;
+    width: 130px;
+    border: none;
+    border-radius: 0px 30px 30px 0px;
+    font-weight: 700;
+    font-size: 16px;
+    background-color: #66BB6A;
+    color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.bi-search{
+    font-size: 16px;
+    color: white;
+    padding: 10px;
+}
+
+h2{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    font-size: 40px;
+    font-weight: 500;
 }
 
 .comidas{
-    width: 60%;
+    width: 80%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -128,8 +133,8 @@ h2{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 70px;
-    width: 70px;
+    height: 120px;
+    width: 120px;
     padding: 20px;
     margin: 20px;
     cursor: pointer;
@@ -137,12 +142,19 @@ h2{
 
 .comida-item:hover{
     background-color: #F5F5F5;
-    border-radius: 5px;
+    border-radius: 10px;
+    border-radius: 10px;
+}
+
+.comida-item img{
+    width: 80px;
+    height: 80px;
 }
 
 .comida-item p{
     margin-top: 10px;
-    font-size: 12px;
+    font-size: 15px;
+    font-weight: 500;
 }
 
 .footer {
@@ -204,13 +216,15 @@ h2{
 }
 
 .div-comida {
-    font-size: 13px;
-    width: 100%;
+    font-size: 16px;
+    font-weight: 500;
+    width: 94%;
     height: 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 0.5px solid #E0E0E0;
+    margin: 10px;
 }
 
 .div-comida p:last-child {
@@ -220,13 +234,18 @@ h2{
 /* RECETAS */
 .container-recetas{
     width: 83%;
-    height: 250px;
+    height: 350px;
     border-radius: 20px;
     margin: 40px auto;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+}
+
+.recetas{
+    display: flex;
+    width: 71%;
 }
 
 .opciones-receta{
@@ -242,26 +261,28 @@ h2{
 
 .opciones-receta:hover{
     background-color: #EDEDED;
-    transition: .3s;
+    transition: .1s;
 }
 
 .opciones-receta i{
     display: flex;
     align-items: center;
     font-size: 60px;
+    border: 1px solid transparent; /* Establece un borde transparente por defecto */
 }
 
 .receta{
-    width: 150px;
-    height: 210px;
+    width: 250px;
     margin: 20px;
     border-radius: 20px;
     cursor: pointer;
+    border: 1px solid transparent; /* Establece un borde transparente por defecto */
 }
 
 .receta:hover{
     background-color: #EDEDED;
     transition: .3s;
+    border: 1px solid #66BB6A;
 }
 
 .receta img{
@@ -273,11 +294,12 @@ h2{
     display: flex;
     justify-content: center;
     margin: 5px;
+    font-size: 20px;
 }
 
 .receta-desc{
     margin: 5px 10px 5px 10px;
-    font-size: 10px;
+    font-size: 13px;
     color: #A8A8A8;
     text-align: center;
 }
@@ -289,6 +311,7 @@ h2{
     align-items: flex-end;
     justify-content: center;
     margin: 10px 5px 5px 0;
+    font-size: 11px;
 }
 
 .bi-chevron-right{
