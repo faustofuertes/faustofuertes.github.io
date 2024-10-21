@@ -60,6 +60,16 @@ body {
     border-radius: 8px;
     height: 55px;
     width: 165px;
+    border: none;
+}
+
+.btn-empezar:hover{
+    background-color: white ;
+    border: 2px solid #66BB6A;
+    color: #66BB6A;
+    transition: .5s;
+    height: 60px;
+    width: 170px;
 }
 
 .barra-buscador{
@@ -144,6 +154,8 @@ h2{
     background-color: #F5F5F5;
     border-radius: 10px;
     border-radius: 10px;
+    transform: scale(1.1);
+    transition: .3s;
 }
 
 .comida-item img{
@@ -241,6 +253,7 @@ h2{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: space-around;
 }
 
 .recetas{
@@ -317,3 +330,28 @@ h2{
 .bi-chevron-right{
     font-size: 45px !important;
 }
+
+
+.icon-container {
+    animation: spin 4s linear infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.icon {
+    font-size: 100px; /* Ajusta el tamaño según lo necesites */
+    color: #007bff; /* Cambia el color del icono si lo deseas */
+    transform-origin: center; /* Asegura que gire sobre su propio eje */
+}
+
+

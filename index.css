@@ -1,0 +1,94 @@
+*{
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    background-image: url('img/fondo.png'); /* Ruta de la imagen */
+    background-size: cover; /* Escala la imagen para cubrir toda la página */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    height: 100vh; /* Hace que el fondo cubra toda la altura visible de la página */
+    margin: 0;
+    padding: 0;
+}
+
+.header{
+    width: 100%;
+    height: 80px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1); /* sombra con difuminado */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.btn-empezar{
+    padding: 10px;
+    color: white;
+    background-color: #66BB6A;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 18px;
+    border-radius: 8px;
+    height: 55px;
+    width: 165px;
+    border: none;
+    margin: 15px;
+    transition: .5s;
+}
+
+.btn-empezar:hover{
+    background-color: white ;
+    border: 2px solid #66BB6A;
+    color: #66BB6A;
+    height: 60px;
+    width: 170px;
+}
+
+.iniciar-sesion{
+    margin: 15px;
+}
+
+.container{
+    margin-left: 10%;
+    display: flex;
+    align-items: center;
+}
+
+.texto h1{
+    font-size: 100px;
+    margin-bottom: 10px;
+}
+
+.texto p{
+    font-size: 20px;
+    margin-top: 0;
+}
+
+.container button{
+    height: 100px; 
+    width: 250px;
+    background-color: #66BB6A;
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 15px;
+    font-size: 25px;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    margin-left: 100px;
+    margin-bottom: 5%;
+    transition: .5s;
+}
+
+.container button:hover{
+    background-color: white ;
+    border: 2px solid #66BB6A;
+    color: #66BB6A;
+    height: 120px; 
+    width: 270px;
+}
+
+.color {
+    color: #66BB6A; /* Cambia el color de la palabra */
+}
