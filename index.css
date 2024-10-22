@@ -63,12 +63,18 @@ body {
     /* Aumento sutil del tamaño */
 }
 
-.iniciar-sesion {
-    margin: 15px;
-    position: relative;
-    /* Añadido para contexto de apilamiento */
-    z-index: 2;
-    /* Asegura que el elemento esté por encima de la imagen */
+.icono-login{
+    margin: 10px;
+}
+
+.header p{
+    margin-right: 15px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.header p:hover{
+    color:  #66BB6A;
 }
 
 .container {
@@ -128,7 +134,7 @@ body {
 /* RESPONSIVE */
 @media (max-width: 1366px) {
     .texto h1 {
-        font-size: 70px;
+        font-size: 80px;
         margin-top: 3%;
     }
 
