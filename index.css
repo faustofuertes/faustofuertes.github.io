@@ -103,19 +103,30 @@ body {
 }
 
 /* RESPONSIVE */
+@media (max-width: 1366px) {
+    .texto h1 {
+        font-size: 70px;
+        margin-top: 3%;
+    }
+    
+    .texto p{
+        font-size: 15px;
+    }
+}
+
 @media (max-width: 1200px) {
     .texto h1 {
-        font-size: 80px; /* Reducir tamaño de fuente en pantallas grandes */
+        font-size: 80px;
     }
     
     .container {
-        margin-left: 5%; /* Reducir margen izquierdo en pantallas grandes */
+        margin-left: 5%;
     }
 }
 
 @media (max-width: 992px) {
     .header {
-        height: 70px; /* Ajustar altura del header en pantallas medianas */
+        height: 70px;
     }
     
     .btn-empezar {
@@ -146,9 +157,6 @@ body {
 }
 
 @media (max-width: 768px) {
-    body {
-        background-position: bottom; /* Cambia la posición de la imagen a abajo */
-    }
 
     .header {
         height: 60px; /* Ajustar altura del header en móvil */
@@ -175,6 +183,9 @@ body {
 }
 
 @media (max-width: 576px) {
+    body {
+        background-image: url('img/fondoMobile.png');
+}
     .container button {
         height: 70px; /* Ajustar altura de botones en pantallas muy pequeñas */
     }
